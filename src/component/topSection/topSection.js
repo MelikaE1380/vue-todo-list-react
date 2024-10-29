@@ -1,12 +1,12 @@
 import trashbin from '../../svg/trashbin.svg'
 
 
-function TopSection({todoList,setTodoList}){
+function TopSection({todoList,setTodoList , doneTasks, setDoneTasks}){
 
 
 
 
-console.log(todoList);
+// console.log(todoList);
     return(
 
 <>

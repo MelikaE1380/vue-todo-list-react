@@ -12,12 +12,9 @@ function App() {
 
    const [todoList , setTodoList] = useState ([
 
-    
 
    ]);
 
-   
-  //  console.log(typeof todoList);
 
 
 
@@ -28,7 +25,8 @@ function App() {
 
       let newTodo = {
         id: Date.now(),
-        text: inputValue
+        text: inputValue,
+        isDone: false
       };
    
       setTodoList([...todoList , newTodo ]);      
@@ -49,19 +47,19 @@ function App() {
         <div className='w-11/12  bg-white sm:w-9/12 md:w-2/4 lg:w-5/12  xl:w-4/12'>
 
           
-          <TopSection  todoList={todoList} setTodoList={setTodoList}/>
+          <TopSection todoList={todoList} setTodoList={setTodoList}/>
 
           <div className='h-[200px] py-[15px] px-[15px]'>
             
             {todoList.map(item=> 
   
              
-              <TodoCard key={item.id} id={item.id} text={item.text} todoList={todoList} setTodoList={setTodoList} />
+              <TodoCard isDone={item.isDone}  key={item.id} id={item.id} text={item.text} todoList={todoList} setTodoList={setTodoList} />
            )}
 
           </div>
 
-           {console.log(todoList)}
+
           <div className='bg-[#F2F2F0] flex justify-center items-center py-[12px]'>
 
             <div className='w-10/12 h-[50px] relative flex items-center'>
@@ -73,7 +71,7 @@ function App() {
               }
              
               }
-              placeholder='New Task' className='w-full text-[#757575] font-bold h-[50px] pl-[15px] text-[19px] rounded-3xl border-[3px] border-[#698DAB] focus:outline-none'  />
+              placeholder='New Task' className='w-full text-[#757575] h-[50px] pl-[15px] text-[19px] rounded-3xl border-[3px] border-[#698DAB] focus:outline-none'  />
               <div onClick={addClickHandler} 
               
               className='bg-[#3F80C2] absolute right-[8px] rounded-full p-[5px]'><img className='w-[25px] h-[25px]' src={plus} /> </div>
