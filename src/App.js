@@ -15,6 +15,8 @@ function App() {
 
    ]);
 
+   const completedTasksCount = todoList.filter(elem=> elem.isDone===true).length;
+
 
 
 
@@ -38,23 +40,23 @@ function App() {
   return (
     <>
 
-      <div className='w-full h-screen flex justify-center flex-col items-center bg-gradient-to-t from-[#3A5E61] to-[#4BC582]'>
+      <div className='w-full h-screen flex justify-start flex-col items-center bg-gradient-to-t from-[#354A5E] to-[#42B782] pt-[20px]'>
 
         <div className='pb-2'>
-          <p className='text-white font-bold text-3xl md:text-4xl'>Vue Todo List</p>
+          <p className='text-white font-bold text-[4rem]'>Vue Todo List</p>
 
         </div>
         <div className='w-11/12  bg-white sm:w-9/12 md:w-2/4 lg:w-5/12  xl:w-4/12'>
 
           
-          <TopSection todoList={todoList} setTodoList={setTodoList}/>
+          <TopSection completedTasksCount={completedTasksCount} todoList={todoList} setTodoList={setTodoList}/>
 
           <div className='h-[200px] py-[15px] px-[15px]'>
             
             {todoList.map(item=> 
   
              
-              <TodoCard isDone={item.isDone}  key={item.id} id={item.id} text={item.text} todoList={todoList} setTodoList={setTodoList} />
+              <TodoCard completedTasksCount={completedTasksCount} isDone={item.isDone}  key={item.id} id={item.id} text={item.text} todoList={todoList} setTodoList={setTodoList} />
            )}
 
           </div>

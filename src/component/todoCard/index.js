@@ -5,7 +5,7 @@ import trashbin2 from '../../svg/trashbin2.svg';
 
 
 
-const TodoCard = ({ text, id, isDone, todoList, setTodoList }) => {
+const TodoCard = ({ text, id, isDone, todoList, setTodoList ,completedTasksCount}) => {
 
 
 
@@ -21,7 +21,7 @@ const TodoCard = ({ text, id, isDone, todoList, setTodoList }) => {
             finder.isDone= !finder.isDone;
             setTodoList(temp);
             console.log(todoList);
-            let finder2 = todoList.find(i=> i.isDone === true);
+            
         }
 
     }
@@ -36,6 +36,9 @@ const TodoCard = ({ text, id, isDone, todoList, setTodoList }) => {
         setTodoList(temp);
     }
 
+
+    
+
     return (
 
         <>
@@ -43,12 +46,12 @@ const TodoCard = ({ text, id, isDone, todoList, setTodoList }) => {
             <div className=" border-[#EFEFEF] border-[2px]  flex justify-between items-center py-[5px] overflow-y-auto px-[20px] hover:bg-[#F2F2F2]">
                 <div className='flex gap-[6px] items-center'>
                     <img src={check} onClick={doneTaskClickHandler} />
-                    <p>{text}</p>
+                    <p className={`${isDone===true ? 'line-through' : 'no-underline'}`}>{text}</p>
 
 
                 </div>
                 <div className='flex gap-[5px] justify-around items-center'>
-                    <img alt="edit" src={edit} />
+                    <img alt="edit" className={`${isDone ? 'fill-green-800' : ''}`} src={edit} />
                     <img alt="trashbin" src={trashbin2} onClick={deleteClickHandler} />
 
                 </div>

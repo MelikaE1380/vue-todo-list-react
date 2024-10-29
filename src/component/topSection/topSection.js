@@ -1,12 +1,27 @@
 import trashbin from '../../svg/trashbin.svg'
 
 
-function TopSection({todoList,setTodoList , doneTasks, setDoneTasks}){
+function TopSection({todoList,setTodoList , completedTasksCount}){
 
 
 
+  function deleteTasksFromTrueManner(){
 
-// console.log(todoList);
+    let temp = [...todoList];
+   temp.forEach(item=> {
+    item.isDone = false;
+   });
+   setTodoList(temp);
+   console.log(todoList);
+}
+
+
+function deleteAllTasks(){
+  let temp = [];
+  setTodoList(temp);
+ 
+}
+
     return(
 
 <>
@@ -26,13 +41,20 @@ function TopSection({todoList,setTodoList , doneTasks, setDoneTasks}){
 
               <p className='text-white'>Tasks Done</p>
               <div className='w-[25px] h-[25px] rounded-full flex justify-center items-center bg-white text-[#3F80C2]'>
-                <span className='font-bold'>0</span>
+                <span className='font-bold'>{completedTasksCount}</span>
               </div>
             </div>
 
 
+            
+          
+            <div onClick={deleteTasksFromTrueManner} className={`${completedTasksCount > 0 ? 'flex' : 'hidden'} bg-[#E93B54] p-[5px] justify-center items-center gap-[5px]`}>
+              <img src={trashbin} />
+              <p className='text-white'>Tasks Done</p>
+            </div>
 
-            <div className='bg-[#E93B54] p-[5px] flex justify-center items-center gap-[5px]'>
+
+            <div onClick={deleteAllTasks} className='bg-[#E93B54] p-[5px] flex justify-center items-center gap-[5px]'>
               <img src={trashbin} />
               <p className='text-white'>Tasks</p>
             </div>
