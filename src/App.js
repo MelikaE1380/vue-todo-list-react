@@ -43,7 +43,7 @@ function App() {
       <div className='w-full h-screen flex justify-start flex-col items-center bg-gradient-to-t from-[#354A5E] to-[#42B782] pt-[20px]'>
 
         <div className='pb-2'>
-          <p className='text-white font-bold text-[4rem]'>Vue Todo List</p>
+          <p className='text-white font-bold text-[1.7rem] sm:text-[4rem]'>React Todo List</p>
 
         </div>
         <div className='w-11/12  bg-white sm:w-9/12 md:w-2/4 lg:w-5/12  xl:w-4/12'>
@@ -51,7 +51,7 @@ function App() {
           
           <TopSection completedTasksCount={completedTasksCount} todoList={todoList} setTodoList={setTodoList}/>
 
-          <div className='h-[200px] py-[15px] px-[15px]'>
+          <div className='h-[200px] py-[15px] px-[15px] overflow-y-auto'>
             
             {todoList.map(item=> 
   
@@ -73,7 +73,7 @@ function App() {
               }
              
               }
-              placeholder='New Task' className='w-full text-[#757575] h-[50px] pl-[15px] text-[19px] rounded-3xl border-[3px] border-[#698DAB] focus:outline-none'  />
+              placeholder='New Task' className='w-full text-[#3E82C3] h-[50px] pl-[15px] font-bold text-[17px] rounded-3xl border-[3px] border-[#698DAB] focus:outline-none'  />
               <div onClick={addClickHandler} 
               
               className='bg-[#3F80C2] absolute right-[8px] rounded-full p-[5px]'><img className='w-[25px] h-[25px]' src={plus} /> </div>

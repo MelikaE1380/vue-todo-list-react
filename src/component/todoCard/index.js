@@ -36,6 +36,13 @@ const TodoCard = ({ text, id, isDone, todoList, setTodoList ,completedTasksCount
         setTodoList(temp);
     }
 
+    function editClickHandler(){
+        console.log(id);
+
+        
+
+
+    }
 
     
 
@@ -43,15 +50,17 @@ const TodoCard = ({ text, id, isDone, todoList, setTodoList ,completedTasksCount
 
         <>
 
-            <div className=" border-[#EFEFEF] border-[2px]  flex justify-between items-center py-[5px] overflow-y-auto px-[20px] hover:bg-[#F2F2F2]">
+            <div className=" border-[#EFEFEF] border-[2px] rounded-lg mb-[5px] flex justify-between items-center py-[5px] overflow-y-auto px-[20px] hover:bg-[#F2F2F2]">
                 <div className='flex gap-[6px] items-center'>
-                    <img src={check} onClick={doneTaskClickHandler} />
-                    <p className={`${isDone===true ? 'line-through' : 'no-underline'}`}>{text}</p>
+                    <img src={check} onClick={doneTaskClickHandler} alt="edit" className={`${!isDone ? 'grayscale' : ''}`} />
+                    
+              
+                    <p className={`${isDone===true ? 'line-through font-bold' : 'no-underline'}`}>{text}</p>
 
 
                 </div>
                 <div className='flex gap-[5px] justify-around items-center'>
-                    <img alt="edit" className={`${isDone ? 'fill-green-800' : ''}`} src={edit} />
+                    <img  src={edit}  onClick={editClickHandler}/>
                     <img alt="trashbin" src={trashbin2} onClick={deleteClickHandler} />
 
                 </div>

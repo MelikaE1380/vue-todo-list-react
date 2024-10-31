@@ -26,22 +26,22 @@ function deleteAllTasks(){
 
 <>
 
-<div className='w-full bg-[#F2F2F2] p-[10px] flex justify-end items-center gap-[10px] flex-wrap'>
+<div className='w-full font-bold bg-[#F2F2F2] p-[10px] flex justify-end items-center gap-[10px] flex-wrap'>
 
-            <div className='flex pl-[10px] pr-[5px] py-[5px] justify-center items-center bg-[#3F80C2] gap-[5px] rounded-3xl'>
+            <div className='flex pl-[10px] pr-[2px] py-[1px] justify-center items-center bg-[#3F80C2] gap-[5px] rounded-3xl'>
 
-              <p className='text-white'>Tasks</p>
-              <div className='w-[25px] h-[25px] rounded-full flex justify-center items-center bg-white text-[#3F80C2]'>
+              <p className='text-white font-bold'>Tasks</p>
+              <div className='w-[20px] h-[20px] rounded-full flex justify-center items-center bg-white text-[#3F80C2]'>
                 <span className='font-bold'>{todoList.length}</span>
               </div>
             </div>
 
 
-            <div className='flex pl-[10px] pr-[5px] py-[5px] justify-center items-center bg-[#3F80C2] gap-[5px] rounded-3xl'>
+            <div className='flex pl-[10px] pr-[2px] py-[1px] justify-center items-center bg-[#3F80C2] gap-[5px] rounded-3xl'>
 
-              <p className='text-white'>Tasks Done</p>
-              <div className='w-[25px] h-[25px] rounded-full flex justify-center items-center bg-white text-[#3F80C2]'>
-                <span className='font-bold'>{completedTasksCount}</span>
+              <p className='text-white font-bold'>Tasks Done</p>
+              <div className='w-[20px] h-[20px] rounded-full flex justify-center items-center bg-white text-[#3F80C2]'>
+                <span className='font-bold'>{todoList.filter(elem=> elem.isDone===true).length}</span>
               </div>
             </div>
 
