@@ -45,7 +45,7 @@ function App() {
       <div className='w-full h-screen flex justify-start flex-col items-center bg-gradient-to-t from-[#354A5E] to-[#42B782] pt-[20px]'>
 
         <div className='pb-2'>
-          <p className='text-white font-bold text-[1.7rem] sm:text-[4rem]'>React Todo List</p>
+          <p className='text-white font-bold text-[1.7rem] sm:text-[3.5rem]'>React Todo List</p>
 
         </div>
         <div className='w-11/12  bg-white sm:w-9/12 md:w-2/4 lg:w-5/12  xl:w-4/12'>
