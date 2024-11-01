@@ -48,13 +48,13 @@ function deleteAllTasks(){
 
             
           
-            <div onClick={deleteTasksFromTrueManner} className={`${completedTasksCount > 0 ? 'flex' : 'hidden'} bg-[#E93B54] p-[5px] justify-center items-center gap-[5px]`}>
+            <div onClick={deleteTasksFromTrueManner} className={`${completedTasksCount > 0 ? 'flex' : 'hidden'} bg-[#F65050] p-[5px] justify-center items-center gap-[5px]`}>
               <img src={trashbin} />
               <p className='text-white'>Tasks Done</p>
             </div>
 
 
-            <div onClick={deleteAllTasks} className='bg-[#E93B54] p-[5px] flex justify-center items-center gap-[5px]'>
+            <div onClick={deleteAllTasks} className='bg-[#F65050] p-[5px] flex justify-center items-center gap-[5px]'>
               <img src={trashbin} />
               <p className='text-white'>Tasks</p>
             </div>

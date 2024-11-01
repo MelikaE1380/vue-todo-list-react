@@ -2,12 +2,13 @@ import { useState } from 'react';
 import check from '../../svg/check.svg';
 import edit from '../../svg/edit.svg';
 import trashbin2 from '../../svg/trashbin2.svg';
-
+import React from 'react';
+import ModalComponent from '../modal';
 
 
 const TodoCard = ({ text, id, isDone, todoList, setTodoList ,completedTasksCount}) => {
 
-
+    const [isModalVisible, setModalVisible] = useState(false); // state modal
 
 
     function doneTaskClickHandler() {
@@ -36,13 +37,15 @@ const TodoCard = ({ text, id, isDone, todoList, setTodoList ,completedTasksCount
         setTodoList(temp);
     }
 
-    function editClickHandler(){
-        console.log(id);
+  
 
-        
-
-
+    function editClickHandler() {
+        setModalVisible(true); // نمایش مدال
     }
+
+    const closeModal = () => {
+        setModalVisible(false); // مخفی کردن مدال
+    };
 
     
 
@@ -59,15 +62,19 @@ const TodoCard = ({ text, id, isDone, todoList, setTodoList ,completedTasksCount
 
 
                 </div>
-                <div className='flex gap-[5px] justify-around items-center'>
-                    <img  src={edit}  onClick={editClickHandler}/>
-                    <img alt="trashbin" src={trashbin2} onClick={deleteClickHandler} />
+                <div className='flex gap-[5px] justify-center items-center'>
+                    <div><img  src={edit} onClick={editClickHandler}/></div>
+
+                  
+                    <div><img alt="trashbin" src={trashbin2} onClick={deleteClickHandler} /></div>
 
                 </div>
             </div>
+            <ModalComponent id={id} isVisible={isModalVisible} onClose={closeModal} todoList={todoList} setTodoList={setTodoList} />
 
 
         </>
+        
 
     )
 }
