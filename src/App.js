@@ -15,9 +15,7 @@ function App() {
 
    ]);
 
-  //  const completedTasksCount = todoList.filter(elem=> elem.isDone===true).length;
-
-   const [completedTasksCount,setCompletedTasksCount] = useState('0');
+   const completedTasksCount = todoList.filter(elem=> elem.isDone===true).length;
 
 
 
